@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css?family=Spartan:500,600,700&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+body {
+  font-family: "Spartan", sans-serif;
+  line-height: 1.5;
+}
+ul {
+  list-style-type: none;
+}
+img {
+  display: block;
+}
+h1 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1rem;
+}
+/* screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*
+===============
+Header
+===============
+*/
+.menu-close-img {
+  display: none;
+}
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+/* nav */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.5rem;
+  position: relative;
+  z-index: 5;
+  padding: 1rem;
+  padding-left: 0;
+}
+.nav-logo {
+  cursor: pointer;
+  margin: 0 auto;
+  padding-right: 4rem;
+  order: 2;
+}
+.nav-toggle {
+  padding: 1rem;
+}
+/* nav menu */
+.nav-menu {
+  display: none;
+  background: white;
+  gap: 0.9rem;
+}
+.nav-menu a {
+  vertical-align: -webkit-baseline-middle;
+  text-transform: lowercase;
+  font-size: 0.9rem;
+}
+.nav-menu li {
+  position: relative;
+}
+.nav-menu a:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: black;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+}
+/* nav active */
+nav.active {
+  background: white;
+}
+.active .nav-menu {
+  display: flex;
+}
+.active .menu-close-img {
+  display: block;
+}
+.active .menu-open-img {
+  display: none;
+}
+.active .nav-logo {
+  display: none;
+}
+
+/*
+===============
+Hero
+===============
+*/
+.hero-bg-img,
+.article-bg-img {
+  width: 100%;
+}
+.hero-bg-img-container {
+  position: relative;
+}
+.hero-navigation-arrows-container {
+  background: #000;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+.hero-navigation-arrows-container img {
+  padding: 16px;
+  height: 53px;
+}
+.hero-bg-img2 {
+  background-image: url(./images/mobile-image-hero-1.jpg);
+  height: 360px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+[data-info="1"] .hero-bg-img2 {
+  background-image: url(./images/mobile-image-hero-2.jpg);
+}
+[data-info="2"] .hero-bg-img2 {
+  background-image: url(./images/mobile-image-hero-3.jpg);
+}
+
+/*
+===============
+Main
+===============
+*/
+main p {
+  color: hsl(0, 0%, 63%);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  min-height: 11rem;
+}
+.hero-section p {
+  margin-bottom: 3rem;
+}
+article {
+  padding: 3rem 1rem;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+/* about */
+.about-section h4 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+/* shop now btn */
+.shop-now-btn {
+  display: flex;
+  gap: 1.5rem;
+  letter-spacing: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.shop-now-arrow {
+  animation: moveright 2.5s ease infinite;
+}
+@keyframes moveright {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/*
+===============
+Footer
+===============
+*/
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*
+===============
+Tablet / Desktop
+===============
+*/
+@media (min-width: 668px) {
+  .hero-bg-img2 {
+    height: 560px;
+  }
+  .hero-bg-img2 {
+    background-image: url(./images/desktop-image-hero-1.jpg);
+    background-position: center;
+  }
+  [data-info="1"] .hero-bg-img2 {
+    background-image: url(./images/desktop-image-hero-2.jpg);
+  }
+  [data-info="2"] .hero-bg-img2 {
+    background-image: url(./images/desktop-image-hero-3.jpg);
+  }
+}
+/* desktop */
+@media (min-width: 950px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+  /* header desktop */
+  header {
+    max-width: 1350px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  nav {
+    justify-content: normal;
+    padding-left: 1rem;
+    padding-top: 2rem;
+    max-width: 86rem;
+    margin: 0 auto;
+  }
+  .nav-logo {
+    order: 0;
+    margin: 0;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .nav-menu {
+    display: flex;
+    background: transparent;
+    color: white;
+  }
+  .nav-menu a:after {
+    background-color: white;
+  }
+  nav.active {
+    background: transparent;
+  }
+  .active .nav-logo {
+    display: block;
+  }
+  /* hero img */
+  .hero-bg-img2 {
+    background-image: url(./images/desktop-image-hero-1.jpg);
+    background-position: top;
+    height: 100%;
+  }
+  [data-info="1"] .hero-bg-img2 {
+    background-image: url(./images/desktop-image-hero-2.jpg);
+  }
+  [data-info="2"] .hero-bg-img2 {
+    background-image: url(./images/desktop-image-hero-3.jpg);
+  }
+  .hero-bg-img,
+  .article-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-navigation-arrows-container {
+    right: -96px;
+  }
+  .hero-bg-img-container {
+    width: 100%;
+    min-width: 28rem;
+  }
+  /* main desktop */
+  main {
+    max-width: 1350px;
+    margin: 0 auto;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+  }
+  .about-section {
+    justify-content: space-between;
+  }
+  .about-section article {
+    width: 48rem;
+  }
+  article {
+    padding: 3rem;
+    width: 58rem;
+    max-width: 65rem;
+  }
+  .hero-section article {
+    display: flex;
+    flex-direction: column;
+    padding-top: 6rem;
+    min-height: 31rem;
+  }
+  .hero-section p {
+    margin-bottom: 1rem;
+    min-height: 8rem;
+  }
+  .shop-now-btn {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1100px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  nav {
+    padding-left: 4rem;
+  }
+}
+
+/*
+===============
+Hover
+===============
+*/
+@media (hover) {
+  .nav-menu a:hover:after {
+    transform: scaleX(1);
+  }
+  .hero-navigation-arrows-container button:hover {
+    background-color: hsl(0, 0%, 27%);
+  }
+  .shop-now-btn:hover {
+    color: hsl(0, 0%, 63%);
+  }
+  .shop-now-btn:hover .shop-now-arrow {
+    filter: contrast(0.1);
+  }
+}
